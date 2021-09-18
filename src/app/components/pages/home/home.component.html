@@ -1,0 +1,89 @@
+
+<!--<h3>{{title}}</h3>
+<input type="text" [(ngModel)]="message">
+<hr>
+<p>Message:{{message}}</p>-->
+
+<!--
+<ul>
+ <li *ngFor="let c of countries;index as i">index:{{i}} {{c}}</li>
+</ul>
+<select name="" id="" class="form-control">
+  <option value="">select country</option>
+  <option *ngFor="let c of countries" [value]="c">{{c}}</option>
+</select>  -->
+
+<div class="container-fluid">
+  <button (click)="loadEmployees()">Load Employees</button>
+
+
+<div *ngIf="employees.length>0 then datafound;else nodata"></div>
+
+<ng-template #nodata><div class="alert alert-danger">There is no record found !</div></ng-template>
+
+<ng-template #datafound>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Salary</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <!--<tr *ngFor="let emp of employees" [style.backgroundColor]="emp.salary>=15000?'green':'orange'">-->
+
+
+      <!--<tr *ngFor="let emp of employees" [ngStyle]=
+      "emp.salary>=15000?{'color':'#fff','backgroundColor':'green'}:{'color':'red','backgroundColor':'yellow'}">-->
+
+      <!--<tr *ngFor="let emp of employees" [ngStyle]="emp.salary>=15000?
+        style1:style2">-->
+
+
+       <!-- <tr *ngFor="let emp of employees" [class.bg-success]="emp.salary>=15000">-->
+
+        <tr *ngFor="let emp of employees" [ngClass]="emp.salary>=15000?obj1:obj2">
+
+
+      <td>{{emp.id}}</td>
+      <td>{{emp.name}}</td>
+      <td>{{emp.gender}}</td>
+      <td>{{emp.salary}}</td>
+
+    </tr>
+  </tbody>
+</table>
+</ng-template>
+
+<!-- ngSwitch example:- -->
+<div [ngSwitch]="day">
+  <h3 *ngSwitchCase = "0">sunday</h3>
+  <h3 *ngSwitchCase = "1">monday</h3>
+  <h3 *ngSwitchCase = "2">tuesday</h3>
+  <h3 *ngSwitchCase = "3">wednesday</h3>
+  <h3 *ngSwitchCase = "4">thursday</h3>
+  <h3 *ngSwitchCase = "5">friday</h3>
+  <h3 *ngSwitchCase = "6">saturday</h3>
+  <h3 *ngSwitchDefault>no match</h3>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
