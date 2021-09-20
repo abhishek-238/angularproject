@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
     style2 =  {'color':'red','background':'blue'};
     obj1 = {'bg-success':true,'text-danger':true};
     obj2 = {'bg-danger':true,'text-info':true};
-    day = new Date().getDate()
+    day = new Date().getDay()
 
   constructor() {
     this.countries=["india","russia","china","nepal"]
@@ -24,11 +24,11 @@ export class HomeComponent implements OnInit {
 
    loadEmployees(){
     this.employees = [
-      {'id':1,'name':'abhi','gender':1,'salary':13000},
-      {'id':2,'name':'mahi','gender':0,'salary':18000},
-      {'id':3,'name':'surbhi','gender':0,'salary':16000},
-      {'id':4,'name':'abhinesh','gender':1,'salary':11000},
-      {'id':5,'name':'boni','gender':0,'salary':12000}
+      {'id':1,'name':'abhi','gender':1,'salary':13000,'dob':new Date('1997-08-19')},
+      {'id':2,'name':'mahi','gender':0,'salary':18000,'dob':new Date('1998-07-18')},
+      {'id':3,'name':'surbhi','gender':0,'salary':16000,'dob':new Date('1995-05-19')},
+      {'id':4,'name':'abhinesh','gender':1,'salary':11000,'dob':new Date('1997-04-13')},
+      {'id':5,'name':'boni','gender':0,'salary':12000,'dob':new Date('1997-10-29')}
 
     ]
    }
@@ -42,4 +42,5 @@ export interface Employee{
   name:string;
   gender:number;
   salary:number;
+  dob:any;
 }

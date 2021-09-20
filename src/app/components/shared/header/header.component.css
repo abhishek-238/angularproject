@@ -3,3 +3,15 @@
   height: 110px;
   background-color: darkcyan;
 }
+.nav ul a{
+  padding: 12px;
+  background-color: darkgreen;
+  color: #fff;
+  text-decoration: none;
+  margin-left: 4px;
+}
+.nav{
+  position:relative;
+  left: 64%;
+  top: 8px;
+}

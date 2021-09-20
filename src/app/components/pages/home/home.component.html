@@ -30,6 +30,7 @@
       <th>Name</th>
       <th>Gender</th>
       <th>Salary</th>
+      <th>dob</th>
 
     </tr>
   </thead>
@@ -50,9 +51,10 @@
 
 
       <td>{{emp.id}}</td>
-      <td>{{emp.name}}</td>
-      <td>{{emp.gender}}</td>
-      <td>{{emp.salary}}</td>
+      <td>{{emp.name|uppercase|formatname:emp.gender}}</td>
+      <td>{{emp.gender|formatgender}}</td>
+      <td>{{emp.salary|currency}}</td>
+      <td>{{emp.dob|date:'fullDate'}}</td>
 
     </tr>
   </tbody>
@@ -72,7 +74,10 @@
 
 </div>
 
-
+<p appChangebg>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+   At, dolorem eius! Ab nulla illum harum, dolor architecto nisi
+   minus quam sed eveniet et repellat omnis alias, placeat incidunt
+   atque labore?</p>
 
 
 </div>

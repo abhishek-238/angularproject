@@ -1,0 +1,22 @@
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'formatgender'
+})
+export class FormatgenderPipe implements PipeTransform {
+
+  transform(value: unknown, ...args: unknown[]): unknown {
+    switch(value){
+      case 1 :
+      return "male";
+      break;
+      case 0 :
+      return "female";
+      break;
+      default:
+        return "unknown";
+
+    }
+  }
+
+}
