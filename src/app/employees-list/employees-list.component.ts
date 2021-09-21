@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeesList } from './employeerecord';
+import { ActivatedRoute } from '@angular/router';
+import { EmployeesComponent } from '../components/pages/employees/employees.component';
 
 @Component({
   selector: 'app-employees-list',
@@ -8,9 +10,15 @@ import { EmployeesList } from './employeerecord';
 })
 export class EmployeesListComponent implements OnInit {
 Employees=EmployeesList
-  constructor() { }
+  constructor(private _activeRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this._activeRoute.params.subscribe(param=>{
+      console.log(param);
+      const id = param["id"];
+      if(id!=undefined)
+      this.Employees=EmployeesList.filter(e=>e.deptid==id);
+    })
   }
 
 }

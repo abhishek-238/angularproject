@@ -2,12 +2,12 @@
   <div class="col-3">
     <nav>
       <ul>
-        <a href="" *ngFor="let d of Departments">{{d.name}}</a>
+        <a href="" *ngFor="let d of
+        Departments"[routerLink]="['search-employee',d.id]">{{d.name}}</a>
       </ul>
     </nav>
   </div>
   <div class="col-9">
-    <app-employees-list></app-employees-list>
-
+    <router-outlet></router-outlet>
   </div>
 </div>

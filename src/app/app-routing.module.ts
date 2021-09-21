@@ -10,13 +10,17 @@ import { PagenotfoundComponent } from './components/pages/pagenotfound/pagenotfo
 import { PaymentTransferComponent } from './components/pages/payment-transfer/payment-transfer.component';
 import { ServicesComponent } from './components/pages/services/services.component';
 import { TicketBookingComponent } from './components/pages/ticket-booking/ticket-booking.component';
+import { EmployeesListComponent } from './employees-list/employees-list.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'home',component:HomeComponent},
   {path:'about',component:AboutComponent},
   {path:'contact',component:ContactComponent},
-  {path:'employees',component:EmployeesComponent},
+  {path:'employees',component:EmployeesComponent,children:[
+    {path:'',component:EmployeesListComponent},
+    {path:'search-employee/:id',component:EmployeesListComponent}
+  ]},
   {path:'services',component:ServicesComponent,children:[
     {path:'',component:TicketBookingComponent},
     {path:'Ticket-booking',component:TicketBookingComponent},
